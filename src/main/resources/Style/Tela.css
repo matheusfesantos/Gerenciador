@@ -1,0 +1,13 @@
+#button-produtos{
+    -fx-text-fill: white;
+    -fx-background-color: blue;
+    -fx-background-radius: 20px;
+    -fx-padding: 20px;
+}
+
+#button-vendas{
+    -fx-text-fill: black;
+    -fx-background-color: white;
+    -fx-background-radius: 20px;
+    -fx-padding: 20px;
+}
