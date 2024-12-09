@@ -1,0 +1,3 @@
+| CLIENTE | COMPRAS | PRODUTOS COMPRADOS |
+
+Matheus; 2; Algicida,Motor

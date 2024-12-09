@@ -1,0 +1,7 @@
+| CLIENTE | DATA | PRODUTO | QUANTIDADE | PREÇO |
+
+Matheus ; 12/12/2023; Motor; 1; 350.99
+
+Matheus; 12/09/2024; Algicida; 2; 51.98
+
+Eliana; 14/01/2024; Clarificante; 1; 5.88

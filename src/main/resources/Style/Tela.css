@@ -1,13 +1,38 @@
+#titulo{
+    -fx-text-fill: white;
+    -fx-font-size: 30px;
+    -fx-padding: 20px;
+    -fx-font-weight: bold;
+}
+
 #button-produtos{
+    -fx-font-weight: bold;
     -fx-text-fill: white;
     -fx-background-color: blue;
     -fx-background-radius: 20px;
     -fx-padding: 20px;
+    -fx-border-radius: 20px;
+    -fx-border-color: black;
+    -fx-border-width: 2px;
 }
 
 #button-vendas{
+    -fx-font-weight: bold;
     -fx-text-fill: black;
     -fx-background-color: white;
-    -fx-background-radius: 20px;
+    -fx-background-radius: 25px;
     -fx-padding: 20px;
+    -fx-border-radius: 20px;
+    -fx-border-color: black;
+    -fx-border-width: 2px;
+}
+
+#button-produtos:hover, #button-vendas:hover{
+    -fx-padding: 20px;
+    -fx-background-color: white;
+    -fx-background-radius: 25px;
+    -fx-border-radius: 20px;
+    -fx-text-fill: blue;
+    -fx-border-color: blue;
+    -fx-border-width: 2px;
 }
