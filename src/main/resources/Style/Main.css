@@ -23,3 +23,13 @@
     -fx-border-radius: 20px;
     -fx-border-width: 2px;
 }
+
+#button-produtos:hover, #button-vendas:hover{
+    -fx-text-fill: white;
+    -fx-background-color: black;
+    -fx-background-radius: 20px;
+    -fx-padding: 30px;
+    -fx-border-color: black;
+    -fx-border-radius: 20px;
+    -fx-border-width: 2px;
+}
