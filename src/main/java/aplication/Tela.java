@@ -8,6 +8,8 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
@@ -29,11 +31,15 @@ public class Tela extends Application {
         }
 
         VBox vBox = new VBox();
-        vBox.setSpacing(20);
+        vBox.setSpacing(40);
 
-        Label titulo = new Label("GERENCIADOR");
-        titulo.setId("titulo");
-        vBox.getChildren().add(titulo);
+        Image image = new Image("photos/icons/TITULO_GERENCIADOR.png");
+        ImageView imageView = new ImageView(image);
+        imageView.setFitHeight(400);
+        imageView.setFitWidth(400);
+        imageView.setPreserveRatio(true);
+        imageView.setSmooth(true);
+        vBox.getChildren().add(imageView);
 
         Button produtos = new Button("PRODUTOS");
         produtos.setId("button-produtos");
@@ -56,6 +62,7 @@ public class Tela extends Application {
         vBox.setAlignment(Pos.CENTER);
 
         Scene scene = new Scene(root, 900, 500);
+        scene.getStylesheets().add("Style/Main.css");
         primaryStage.setScene(scene);
         primaryStage.show();
     }

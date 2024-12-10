@@ -14,6 +14,8 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
+import javax.naming.directory.SearchControls;
+import javax.naming.directory.SearchResult;
 import java.util.List;
 
 public class TelaProdutos extends Application {
@@ -48,10 +50,7 @@ public class TelaProdutos extends Application {
             String NomeProduto = produto.getNome();
 
             Label produtoLabel = new Label(produto.getNome());
-
-            Button pl = new Button(produto.getNome());
-            pl.setOnAction(event ->{});
-
+            produtoLabel.setId("produtoLabel");
             gridPane.add(produtoLabel, col, row);
 
             col++;
@@ -78,6 +77,7 @@ public class TelaProdutos extends Application {
         root.setCenter(vbox);
 
         Scene scene = new Scene(root, 900, 500);
+        scene.getStylesheets().add(getClass().getResource("/Style/TelaProdutos.css").toExternalForm());
         primaryStage.setScene(scene);
         primaryStage.setTitle("MY STORE");
         primaryStage.show();

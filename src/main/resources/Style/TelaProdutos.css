@@ -1,0 +1,25 @@
+#vbox{
+    -fx-background-color: white;
+    -fx-background-radius: 150px;
+    -fx-border-color: black;
+    -fx-border-radius: 150px;
+    -fx-border-width: 2px;
+}
+
+#produtoLabel{
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-color: #1f77cd;
+    -fx-padding: 20px;
+    -fx-background-radius: 20px;
+    -fx-border-color: black;
+    -fx-border-radius: 20px;
+    -fx-border-width: 2px;
+}
+
+#button{
+    -fx-text-fill: white;
+    -fx-background-color: black;
+    -fx-background-radius: 20px;
+    -fx-padding: 12px;
+}

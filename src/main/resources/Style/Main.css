@@ -1,0 +1,25 @@
+#titulo{
+    -fx-font-weight: bold;
+    -fx-text-fill: orange;
+    -fx-font-size: 60px;
+}
+
+#button-vendas{
+    -fx-text-fill: black;
+    -fx-background-color: white;
+    -fx-background-radius: 20px;
+    -fx-padding: 20px;
+    -fx-border-color: black;
+    -fx-border-radius: 20px;
+    -fx-border-width: 2px;
+}
+
+#button-produtos{
+    -fx-text-fill: white;
+    -fx-background-color: #18659e;
+    -fx-background-radius: 20px;
+    -fx-padding: 20px;
+    -fx-border-color: black;
+    -fx-border-radius: 20px;
+    -fx-border-width: 2px;
+}
