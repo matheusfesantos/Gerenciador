@@ -8,7 +8,7 @@
 #button-produtos{
     -fx-font-weight: bold;
     -fx-text-fill: white;
-    -fx-background-color: blue;
+    -fx-background-color: #007AFF;
     -fx-background-radius: 20px;
     -fx-padding: 20px;
     -fx-border-radius: 20px;
@@ -32,7 +32,7 @@
     -fx-background-color: white;
     -fx-background-radius: 25px;
     -fx-border-radius: 20px;
-    -fx-text-fill: blue;
-    -fx-border-color: blue;
+    -fx-text-fill: #007AFF;
+    -fx-border-color: #007AFF;
     -fx-border-width: 2px;
 }

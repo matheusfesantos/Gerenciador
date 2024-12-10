@@ -1,9 +1,11 @@
 package aplication;
+
 import aplication.nota_fiscal.NotasFiscais;
 import aplication.products.TelaProdutos;
 import javafx.application.Application;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.BorderPane;
@@ -18,8 +20,13 @@ public class Tela extends Application {
 
         BorderPane root = new BorderPane();
         root.setId("body");
-        root.setStyle("-fx-background-image:" +
-                "url('photos/images/backgroundpool.png')");
+        try{
+            root.setStyle("-fx-background-image:" +
+                    "url('photos/images/backgroundpool.png')");
+        }
+        catch (Exception e){
+            System.out.println(e.getMessage());
+        }
 
         VBox vBox = new VBox();
         vBox.setSpacing(20);
@@ -30,17 +37,33 @@ public class Tela extends Application {
 
         Button produtos = new Button("PRODUTOS");
         produtos.setId("button-produtos");
+        TelaProdutos tp = new TelaProdutos();
         produtos.setOnAction(event ->{
-            TelaProdutos tp = new TelaProdutos();
-            tp.start(primaryStage);
+            try{
+                tp.start(primaryStage);
+            }
+            catch(Exception e){
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("ERRO");
+                alert.setHeaderText("Aconteceu algum erro, tente novamente");
+                alert.setContentText(e.getMessage());
+            }
         });
         vBox.getChildren().add(produtos);
 
         Button vendas = new Button("VENDAS");
         vendas.setId("button-vendas");
+        NotasFiscais nt = new NotasFiscais();
         vendas.setOnAction(event ->{
-            NotasFiscais nt = new NotasFiscais();
-            nt.start(primaryStage);
+            try{
+                nt.start(primaryStage);
+            }
+            catch(Exception e){
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("ERRO");
+                alert.setHeaderText("Aconteceu algum erro, tente novamente");
+                alert.setContentText(e.getMessage());
+            }
         });
         vBox.getChildren().add(vendas);
 
