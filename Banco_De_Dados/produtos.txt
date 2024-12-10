@@ -1,7 +1,3 @@
 | PRODUTO | VALOR | QUANTIDADE EM ESTOQUE | IMAGEM
 
-Motor; 235.99; 12;
-
-Peneira; 25.99; 8;
-
-Cloro; 134.99; 10; C:\Users\matheus.fgs\Desktop\Gerenciador_Java\src\main\resources\photos\produtos\cloro.png
+Cloro;134.99;10;C:\Users\matheus.fgs\Desktop\Gerenciador_Java\src\main\resources\photos\produtos\cloro.png

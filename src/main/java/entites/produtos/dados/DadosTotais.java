@@ -10,7 +10,7 @@ public class DadosTotais {
     public static List<ListaProdutos> carregarProdutos() {
         List<ListaProdutos> produtos = new ArrayList<>();
         File arquivo = new File("C:\\Users\\matheus.fgs\\Desktop\\" +
-                "Gerenciador_de_Estoque\\Banco_de_Dados\\produtos.txt");
+                "Gerenciador_Java\\Banco_De_Dados\\produtos.txt");
 
         try (Scanner sc = new Scanner(arquivo)) {
             while (sc.hasNextLine()) {

@@ -1,6 +1,7 @@
 package aplication.products;
 
-import aplication.tela_de_venda.TelaVenda;
+import entites.produtos.dados.DadosTotais;
+import entites.produtos.dados.ListaProdutos;
 import javafx.application.Application;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
@@ -8,9 +9,12 @@ import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+
+import java.util.List;
 
 public class TelaProdutos extends Application {
 
@@ -31,29 +35,39 @@ public class TelaProdutos extends Application {
         vbox.setMaxWidth(840);
         vbox.setMaxHeight(450);
 
-        Image search = new Image("photos/produtos/cloro.png");
-        String nomeproduto = "Cloro";
-        ImageView imageView = new ImageView(search);
-        imageView.setFitWidth(100);
-        imageView.setFitHeight(100);
-        vbox.getChildren().add(imageView);
-
-        TelaVenda telaVenda = new TelaVenda(nomeproduto);
-        imageView.setOnMouseClicked(event ->{
-                telaVenda.start(primaryStage);
-        });
-
         HBox hbox = new HBox();
         hbox.setAlignment(Pos.TOP_CENTER);
         hbox.setSpacing(10);
+
+        List<ListaProdutos> produtos = DadosTotais.carregarProdutos();
+
+        GridPane gridPane = new GridPane();
+        gridPane.setHgap(10);
+        gridPane.setVgap(10);
+
+        int row = 0;
+        for (ListaProdutos produto : produtos) {
+            VBox produtoBox = new VBox(5);
+
+            ImageView imageView;
+                Image image = new Image("file:" + produto.getImagem());
+                imageView = new ImageView(image);
+                imageView.setFitWidth(100);
+                imageView.setPreserveRatio(true);
+
+            produtoBox.getChildren().addAll(imageView);
+
+            gridPane.add(produtoBox, row % 3, row / 3);
+            row++;
+        }
 
         Button vendas = new Button("VENDAS");
         vendas.setId("button");
         hbox.getChildren().add(vendas);
 
-        Button produtos = new Button("PRODUTOS");
-        produtos.setId("button");
-        hbox.getChildren().add(produtos);
+        Button produtosButton = new Button("PRODUTOS");
+        produtosButton.setId("button");
+        hbox.getChildren().add(produtosButton);
 
         vbox.getChildren().add(hbox);
         root.setCenter(vbox);
