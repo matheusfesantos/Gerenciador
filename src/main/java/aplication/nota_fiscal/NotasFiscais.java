@@ -12,6 +12,7 @@ import javafx.stage.Stage;
 
 import java.awt.*;
 import java.util.ArrayList;
+import java.util.List;
 
 public class NotasFiscais extends Application {
 
@@ -25,15 +26,8 @@ public class NotasFiscais extends Application {
         vbox.setId("vbox");
         vbox.setSpacing(10);
 
-        List<ListaVendas> listaVendas = DadosVendas();
 
         GridPane grid = new GridPane();
-
-        int row = 0;
-        int col = 0;
-        for (ListaVendas venda: vendas){
-
-        }
 
         BorderPane root = new BorderPane();
 
