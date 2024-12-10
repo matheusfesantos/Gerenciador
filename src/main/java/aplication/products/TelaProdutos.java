@@ -1,12 +1,9 @@
 package aplication.products;
 
 import aplication.tela_de_venda.TelaVenda;
-import entites.clientes.adiconar_venda.AdicionarVenda;
-import entites.produtos.pesquisar.Pesquisar;
 import javafx.application.Application;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -42,16 +39,8 @@ public class TelaProdutos extends Application {
         vbox.getChildren().add(imageView);
 
         TelaVenda telaVenda = new TelaVenda(nomeproduto);
-        imageView.setOnMouseClicked(event -> {
-            try{
+        imageView.setOnMouseClicked(event ->{
                 telaVenda.start(primaryStage);
-            }
-            catch(Exception e){
-                Alert alert = new Alert(Alert.AlertType.ERROR);
-                alert.setTitle("ERRO");
-                alert.setHeaderText("Aconteceu algum erro, tente novamente");
-                alert.setContentText(e.getMessage());
-            }
         });
 
         HBox hbox = new HBox();
@@ -70,7 +59,6 @@ public class TelaProdutos extends Application {
         root.setCenter(vbox);
 
         Scene scene = new Scene(root, 900,500);
-        scene.getStylesheets().add(getClass().getResource("/Style/TelaProdutos.css").toExternalForm());
         primaryStage.setScene(scene);
         primaryStage.setTitle("MY STORE");
         primaryStage.show();

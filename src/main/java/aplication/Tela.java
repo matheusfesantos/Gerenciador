@@ -39,15 +39,7 @@ public class Tela extends Application {
         produtos.setId("button-produtos");
         TelaProdutos tp = new TelaProdutos();
         produtos.setOnAction(event ->{
-            try{
                 tp.start(primaryStage);
-            }
-            catch(Exception e){
-                Alert alert = new Alert(Alert.AlertType.ERROR);
-                alert.setTitle("ERRO");
-                alert.setHeaderText("Aconteceu algum erro, tente novamente");
-                alert.setContentText(e.getMessage());
-            }
         });
         vBox.getChildren().add(produtos);
 
@@ -55,15 +47,7 @@ public class Tela extends Application {
         vendas.setId("button-vendas");
         NotasFiscais nt = new NotasFiscais();
         vendas.setOnAction(event ->{
-            try{
                 nt.start(primaryStage);
-            }
-            catch(Exception e){
-                Alert alert = new Alert(Alert.AlertType.ERROR);
-                alert.setTitle("ERRO");
-                alert.setHeaderText("Aconteceu algum erro, tente novamente");
-                alert.setContentText(e.getMessage());
-            }
         });
         vBox.getChildren().add(vendas);
 
@@ -72,8 +56,6 @@ public class Tela extends Application {
         vBox.setAlignment(Pos.CENTER);
 
         Scene scene = new Scene(root, 900, 500);
-        scene.getStylesheets().add(getClass().getResource
-                ("/Style/Tela.css").toExternalForm());
         primaryStage.setScene(scene);
         primaryStage.show();
     }

@@ -14,7 +14,8 @@ public class Pesquisar {
     }
 
     public String pesquisarProduto() {
-        File arquivo = new File("C:\\Users\\matheus.fgs\\Desktop\\Gerenciador_de_Estoque\\Banco_de_Dados\\produtos.txt");
+        File arquivo = new File("C:\\Users\\matheus.fgs\\" +
+                "Desktop\\Gerenciador_Java\\Banco_de_Dados\\produtos.txt");
 
         StringBuilder resultado = new StringBuilder();
 
@@ -32,7 +33,7 @@ public class Pesquisar {
                     this.nomeProduto = separador[0].trim();
                     this.preco = Double.parseDouble(separador[1].trim());
                     this.quantidade = Integer.parseInt(separador[2].trim());
-                    this.imagem = separador[3].trim(); // Armazenando o caminho da imagem
+                    this.imagem = separador[3].trim();
 
                     resultado.append("Produto: ").append(nomeProduto).append("\n")
                             .append("Preço: R$ ").append(preco).append("\n")

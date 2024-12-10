@@ -3,16 +3,20 @@ package aplication.tela_de_venda;
 import entites.produtos.pesquisar.Pesquisar;
 import javafx.application.Application;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
+import java.awt.*;
+
 public class TelaVenda extends Application {
 
-    String nomeproduto;
-    public TelaVenda(String nomeproduto){
+    private String nomeproduto;
+
+    public TelaVenda(String nomeproduto) {
         this.nomeproduto = nomeproduto;
     }
 
@@ -21,31 +25,31 @@ public class TelaVenda extends Application {
         primaryStage.setTitle("MY STORE");
 
         Pesquisar pes = new Pesquisar(nomeproduto);
+        String resultadoProduto = pes.pesquisarProduto();
 
         BorderPane root = new BorderPane();
         root.setId("body");
-        try{
-            root.setStyle("-fx-background-image:" +
-                    "url('photos/images/backgroundpool.png')");
-        }
-        catch (Exception e){
-            System.out.println(e.getMessage());
-        }
+        root.setStyle("-fx-background-image:" +
+                "url('photos/images/backgroundpool.png')");
 
         VBox vbox = new VBox();
         vbox.setId("vbox");
 
+        int valor = (int) pes.getPreco();
+        String imagemProduto = pes.getImagem();
 
-        Image image = new Image(pes.getImagem());
+        Image image = new Image("file:" + imagemProduto);
         ImageView imageView = new ImageView(image);
-        root.setCenter(imageView);
-        primaryStage.setScene(new Scene(root));
-        primaryStage.show();
+        imageView.setFitWidth(200);
+        imageView.setPreserveRatio(true);
         vbox.getChildren().add(imageView);
 
-        root.setBottom(vbox);
+        Label PrecoProduto = new Label(valor + "");
+        vbox.getChildren().add(PrecoProduto);
 
-        Scene scene = new Scene(root);
+        root.setCenter(vbox);
+
+        Scene scene = new Scene(root, 900, 500);
         primaryStage.setScene(scene);
         primaryStage.show();
     }
