@@ -1,3 +1,5 @@
 | PRODUTO | VALOR | QUANTIDADE EM ESTOQUE | IMAGEM
 
-Cloro;134.99;10;C:\Users\matheus.fgs\Desktop\Gerenciador_Java\src\main\resources\photos\produtos\cloro.png
+Algicida; 25.99; 23; C:\Users\matheus.fgs\Desktop\Gerenciador_Java\src\main\resources\photos\produtos\cloro.png
+Cloro; 134.99 ; 10; C:\Users\matheus.fgs\Desktop\Gerenciador_Java\src\main\resources\photos\produtos\cloro.png
+Motor; 230.99; 20; C:\Users\matheus.fgs\Desktop\Gerenciador_Java\src\main\resources\photos\produtos\cloro.png

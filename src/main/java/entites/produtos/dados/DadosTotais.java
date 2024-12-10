@@ -13,7 +13,7 @@ public class DadosTotais {
                 "Gerenciador_Java\\Banco_De_Dados\\produtos.txt");
 
         try (Scanner sc = new Scanner(arquivo)) {
-            while (sc.hasNextLine()) {
+            while (sc.hasNextLine()){
                 String linha = sc.nextLine();
                 String delimitador = linha.contains(";") ? ";" : ",";
                 String[] separador = linha.split(delimitador);

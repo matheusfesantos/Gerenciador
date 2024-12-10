@@ -3,11 +3,11 @@ package aplication.products;
 import entites.produtos.dados.DadosTotais;
 import entites.produtos.dados.ListaProdutos;
 import javafx.application.Application;
+import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
+import javafx.scene.control.Label;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
@@ -23,8 +23,7 @@ public class TelaProdutos extends Application {
 
         BorderPane root = new BorderPane();
         root.setId("body");
-        root.setStyle("-fx-background-image:" +
-                "url('photos/images/backgroundpool.png')");
+        root.setStyle("-fx-background-image: url('photos/images/backgroundpool.png');");
 
         VBox vbox = new VBox();
         vbox.setAlignment(Pos.CENTER);
@@ -35,31 +34,36 @@ public class TelaProdutos extends Application {
         vbox.setMaxWidth(840);
         vbox.setMaxHeight(450);
 
-        HBox hbox = new HBox();
-        hbox.setAlignment(Pos.TOP_CENTER);
-        hbox.setSpacing(10);
-
         List<ListaProdutos> produtos = DadosTotais.carregarProdutos();
 
         GridPane gridPane = new GridPane();
+        gridPane.setPadding(new Insets(25));
         gridPane.setHgap(10);
         gridPane.setVgap(10);
+        gridPane.setAlignment(Pos.CENTER);
 
+        int col = 0;
         int row = 0;
-        for (ListaProdutos produto : produtos) {
-            VBox produtoBox = new VBox(5);
+        for (ListaProdutos produto : produtos){
+            String NomeProduto = produto.getNome();
 
-            ImageView imageView;
-                Image image = new Image("file:" + produto.getImagem());
-                imageView = new ImageView(image);
-                imageView.setFitWidth(100);
-                imageView.setPreserveRatio(true);
+            Label produtoLabel = new Label(produto.getNome());
 
-            produtoBox.getChildren().addAll(imageView);
+            Button pl = new Button(produto.getNome());
+            pl.setOnAction(event ->{});
 
-            gridPane.add(produtoBox, row % 3, row / 3);
-            row++;
+            gridPane.add(produtoLabel, col, row);
+
+            col++;
+            if (col > 2) {
+                col = 0;
+                row++;
+            }
         }
+
+        HBox hbox = new HBox();
+        hbox.setAlignment(Pos.TOP_CENTER);
+        hbox.setSpacing(10);
 
         Button vendas = new Button("VENDAS");
         vendas.setId("button");
@@ -69,10 +73,11 @@ public class TelaProdutos extends Application {
         produtosButton.setId("button");
         hbox.getChildren().add(produtosButton);
 
+        vbox.getChildren().add(gridPane);
         vbox.getChildren().add(hbox);
         root.setCenter(vbox);
 
-        Scene scene = new Scene(root, 900,500);
+        Scene scene = new Scene(root, 900, 500);
         primaryStage.setScene(scene);
         primaryStage.setTitle("MY STORE");
         primaryStage.show();

@@ -6,7 +6,8 @@ public class ListaProdutos {
     private int quantidade;
     private String imagem;
 
-    public ListaProdutos(String nome, double preco, int quantidade, String imagem) {
+    public ListaProdutos(String nome, double preco,
+                         int quantidade, String imagem) {
         this.nome = nome;
         this.preco = preco;
         this.quantidade = quantidade;
