@@ -25,10 +25,11 @@ public class DadosTotais {
                 String delimitador = linha.contains(";") ? ";" : ",";
                 String[] separador = linha.split(delimitador);
 
-                if (separador.length == 3) {
+                if (separador.length == 4) {
                     String produto = separador[0].trim();
                     double preco = Double.parseDouble(separador[1].trim());
                     int quantidade = Integer.parseInt(separador[2].trim());
+                    String imagem = separador[3].trim();
 
                     System.out.println("Produto: " + produto);
                     System.out.println("Preço: " + preco);

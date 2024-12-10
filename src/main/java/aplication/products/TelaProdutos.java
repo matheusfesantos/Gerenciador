@@ -1,6 +1,8 @@
 package aplication.products;
 
 import aplication.tela_de_venda.TelaVenda;
+import entites.clientes.adiconar_venda.AdicionarVenda;
+import entites.produtos.pesquisar.Pesquisar;
 import javafx.application.Application;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
@@ -33,13 +35,13 @@ public class TelaProdutos extends Application {
         vbox.setMaxHeight(450);
 
         Image search = new Image("photos/produtos/cloro.png");
-        String NomeDoProduto = "Cloro";
+        String nomeproduto = "Cloro";
         ImageView imageView = new ImageView(search);
         imageView.setFitWidth(100);
         imageView.setFitHeight(100);
         vbox.getChildren().add(imageView);
 
-        TelaVenda telaVenda = new TelaVenda();
+        TelaVenda telaVenda = new TelaVenda(nomeproduto);
         imageView.setOnMouseClicked(event -> {
             try{
                 telaVenda.start(primaryStage);
@@ -51,20 +53,6 @@ public class TelaProdutos extends Application {
                 alert.setContentText(e.getMessage());
             }
         });
-
-        /*
-        Image peneira = new Image("photos/produtos/peneira.png");
-        ImageView imageViewPeneira = new ImageView(peneira);
-        imageViewPeneira.setFitWidth(100);
-        imageViewPeneira.setFitHeight(100);
-        vbox.getChildren().add(imageViewPeneira);
-
-        Image clari = new Image("photos/produtos/clarificante.png");
-        ImageView imageViewC = new ImageView(clari);
-        imageViewC.setFitWidth(100);
-        imageViewC.setFitHeight(100);
-        vbox.getChildren().add(imageViewC);
-         */
 
         HBox hbox = new HBox();
         hbox.setAlignment(Pos.TOP_CENTER);

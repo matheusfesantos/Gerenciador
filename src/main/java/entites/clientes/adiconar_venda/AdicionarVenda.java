@@ -11,11 +11,10 @@ public class AdicionarVenda {
     static String data_venda;
     static int quantidade;
     static double valor;
-    public AdicionarVenda(String cliente, String nomeproduto, String data,
-                          int quantidade, double valor){
+    public AdicionarVenda(String nomeproduto){
         this.cliente = cliente;
         this.nomeproduto = nomeproduto;
-        this.data_venda = data;
+        this.data_venda = data_venda;
         this.quantidade = quantidade;
         this.valor = valor * quantidade;
     }
