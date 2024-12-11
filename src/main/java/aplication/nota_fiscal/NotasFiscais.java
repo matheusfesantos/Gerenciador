@@ -72,13 +72,15 @@ public class NotasFiscais extends Application {
         int row = 0;
         int col = 0;
         GridPane gridPane = new GridPane();
+        gridPane.setAlignment(Pos.CENTER);
+        gridPane.setPadding(new javafx.geometry.Insets(10));
         gridPane.setHgap(10);
         gridPane.setVgap(0);
 
         for (ListaVendas venda : vendas) {
             ImageView imageView = new ImageView(NotaFiscal);
             imageView.setFitHeight(80);
-            imageView.setFitWidth(100);
+            imageView.setFitWidth(200);
             imageView.setPreserveRatio(true);
             imageView.setSmooth(true);
             imageView.setId("NotaFiscal");
@@ -90,7 +92,9 @@ public class NotasFiscais extends Application {
             vendaLabel.setAlignment(Pos.CENTER);
             vendaLabel.setCursor(Cursor.HAND);
             vendaLabel.setOnMouseClicked(e -> {
-                System.out.print(venda.getCliente());
+                System.out.println("Produto comprado foi " + venda.getProduto());
+                System.out.println("Quantidade comprada foi " + venda.getQuantidade());
+                System.out.println("Preço foi de "+ venda.getValorTotal());
             });
 
             Label data = new Label(venda.getData());
@@ -100,8 +104,8 @@ public class NotasFiscais extends Application {
             data.setPrefWidth(80);
 
             gridPane.add(data, col, row );
-            gridPane.add(vendaLabel, col, row + 1);
-            gridPane.add(imageView, col, row + 2);
+            gridPane.add(imageView, col, row + 1);
+            gridPane.add(vendaLabel, col, row + 2);
 
             col++;
             if (col > 3) {

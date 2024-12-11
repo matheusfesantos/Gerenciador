@@ -1,6 +1,6 @@
 | DATA | PRODUTO | QUANTIDADE | PREÇO | CLIENTE |
 
-12/12/2023;2;1;350.99;Matheus
+12/12/2023;Motor;1;350.99;Matheus
 
 12/09/2024;Algicida;2;51.98;Matheus
 

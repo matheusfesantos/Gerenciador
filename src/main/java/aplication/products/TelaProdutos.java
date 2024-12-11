@@ -42,7 +42,7 @@ public class TelaProdutos extends Application {
         GridPane gridPane = new GridPane();
         gridPane.setPadding(new Insets(25));
         gridPane.setHgap(10);
-        gridPane.setVgap(10);
+        gridPane.setVgap(0);
         gridPane.setAlignment(Pos.CENTER);
 
 
@@ -51,7 +51,7 @@ public class TelaProdutos extends Application {
         for (ListaProdutos produto : produtos){
             String NomeProduto = produto.getNome();
 
-            Image image = new Image("file: "+produto.getImagem());
+            Image image = new Image("file:"+produto.getImagem());
             ImageView imageView = new ImageView(image);
             imageView.setId("image");
             imageView.setFitWidth(80);
@@ -59,11 +59,15 @@ public class TelaProdutos extends Application {
             imageView.setPreserveRatio(true);
             gridPane.add(imageView, col, row);
 
+            /*
             Label produtoLabel = new Label(produto.getNome());
             produtoLabel.setId("produtoLabel");
-            /*
-            gridPane.add(produtoLabel, col, row);
-             */
+            gridPane.add(produtoLabel, col, row + 1);
+            */
+
+            Label quantidadeLabel = new Label("Disponivel: " + produto.getQuantidade());
+            quantidadeLabel.setId("produtoLabel");
+            gridPane.add(quantidadeLabel, col, row + 1);
 
             col++;
             if (col > 2) {
@@ -89,7 +93,7 @@ public class TelaProdutos extends Application {
         hbox.getChildren().add(vendas);
 
         Button produtosButton = new Button("PRODUTOS");
-        produtosButton.setId("button");
+        produtosButton.setId("button-produtos");
         hbox.getChildren().add(produtosButton);
 
         vbox.getChildren().add(gridPane);
