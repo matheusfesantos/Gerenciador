@@ -6,7 +6,7 @@
     -fx-border-width: 2px;
 }
 
-#NotaFiscal{
+#vendaLabel{
     -fx-text-fill: white;
     -fx-font-weight: bold;
     -fx-background-color: #1f77cd;
@@ -14,9 +14,40 @@
     -fx-background-radius: 3px;
 }
 
+#data{
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-color: black;
+}
+
+#search{
+    /*
+    -fx-background-image: url("");
+     */
+    -fx-border-color: black;
+    -fx-border-width: 2px;
+    -fx-border-radius: 20px;
+    -fx-background-radius: 20px;
+}
+
+#scroll{
+    -fx-background-color: black;
+    -fx-border-color: black;
+    -fx-border-width: 1px;
+}
+
 #button{
     -fx-text-fill: white;
     -fx-background-color: black;
+    -fx-background-radius: 20px;
+    -fx-padding: 12px;
+}
+
+#button-venda{
+    -fx-background-color: white;
+    -fx-border-color: black;
+    -fx-border-width: 2px;
+    -fx-border-radius: 20px;
     -fx-background-radius: 20px;
     -fx-padding: 12px;
 }

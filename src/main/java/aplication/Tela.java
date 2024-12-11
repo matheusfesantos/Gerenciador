@@ -31,11 +31,9 @@ public class Tela extends Application {
         VBox vBox = new VBox();
         vBox.setSpacing(20);
 
-        /*
         Label titulo = new Label("GERENCIADOR");
         titulo.setId("titulo");
         vBox.getChildren().add(titulo);
-         */
 
         Button produtos = new Button("PRODUTOS");
         produtos.setId("button-produtos");

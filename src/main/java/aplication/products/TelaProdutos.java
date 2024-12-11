@@ -1,5 +1,6 @@
 package aplication.products;
 
+import aplication.Tela;
 import entites.produtos.dados.DadosTotais;
 import entites.produtos.dados.ListaProdutos;
 import javafx.application.Application;
@@ -8,14 +9,14 @@ import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
-import javax.naming.directory.SearchControls;
-import javax.naming.directory.SearchResult;
 import java.util.List;
 
 public class TelaProdutos extends Application {
@@ -44,14 +45,25 @@ public class TelaProdutos extends Application {
         gridPane.setVgap(10);
         gridPane.setAlignment(Pos.CENTER);
 
+
         int col = 0;
         int row = 0;
         for (ListaProdutos produto : produtos){
             String NomeProduto = produto.getNome();
 
+            Image image = new Image("file: "+produto.getImagem());
+            ImageView imageView = new ImageView(image);
+            imageView.setId("image");
+            imageView.setFitWidth(80);
+            imageView.setFitHeight(80);
+            imageView.setPreserveRatio(true);
+            gridPane.add(imageView, col, row);
+
             Label produtoLabel = new Label(produto.getNome());
             produtoLabel.setId("produtoLabel");
+            /*
             gridPane.add(produtoLabel, col, row);
+             */
 
             col++;
             if (col > 2) {
@@ -63,6 +75,14 @@ public class TelaProdutos extends Application {
         HBox hbox = new HBox();
         hbox.setAlignment(Pos.TOP_CENTER);
         hbox.setSpacing(10);
+
+        Button voltar = new Button("VOLTAR");
+        voltar.setId("button");
+        voltar.setOnAction(e -> {
+            Tela tela = new Tela();
+            tela.start(primaryStage);
+        });
+        hbox.getChildren().add(voltar);
 
         Button vendas = new Button("VENDAS");
         vendas.setId("button");
