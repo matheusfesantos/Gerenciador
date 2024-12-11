@@ -11,25 +11,20 @@
     -fx-padding: 20px;
     -fx-border-color: black;
     -fx-border-radius: 20px;
-    -fx-border-width: 2px;
+    -fx-border-width: 1px;
 }
 
 #button-produtos{
     -fx-text-fill: white;
-    -fx-background-color: #18659e;
+    -fx-background-color: #1f77cd;
     -fx-background-radius: 20px;
     -fx-padding: 20px;
     -fx-border-color: black;
     -fx-border-radius: 20px;
-    -fx-border-width: 2px;
+    -fx-border-width: 1px;
 }
 
 #button-produtos:hover, #button-vendas:hover{
-    -fx-text-fill: white;
-    -fx-background-color: black;
-    -fx-background-radius: 20px;
-    -fx-padding: 30px;
-    -fx-border-color: black;
-    -fx-border-radius: 20px;
-    -fx-border-width: 2px;
+    -fx-scale-x: 1.1;
+    -fx-scale-y: 1.1;
 }

@@ -9,6 +9,7 @@ import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
@@ -37,6 +38,13 @@ public class TelaProdutos extends Application {
         vbox.setMaxWidth(840);
         vbox.setMaxHeight(450);
 
+        TextField search = new TextField();
+        search.setMaxWidth(200);
+        search.setMaxHeight(30);
+        search.setPromptText("Buscar");
+        search.setId("search");
+        vbox.getChildren().add(search);
+
         List<ListaProdutos> produtos = DadosTotais.carregarProdutos();
 
         GridPane gridPane = new GridPane();
@@ -54,7 +62,7 @@ public class TelaProdutos extends Application {
             Image image = new Image("file:"+produto.getImagem());
             ImageView imageView = new ImageView(image);
             imageView.setId("image");
-            imageView.setFitWidth(80);
+            imageView.setFitWidth(120);
             imageView.setFitHeight(80);
             imageView.setPreserveRatio(true);
             gridPane.add(imageView, col, row);
@@ -65,7 +73,7 @@ public class TelaProdutos extends Application {
             gridPane.add(produtoLabel, col, row + 1);
             */
 
-            Label quantidadeLabel = new Label("Disponivel: " + produto.getQuantidade());
+            Label quantidadeLabel = new Label("Em estoque: " + produto.getQuantidade());
             quantidadeLabel.setId("produtoLabel");
             gridPane.add(quantidadeLabel, col, row + 1);
 

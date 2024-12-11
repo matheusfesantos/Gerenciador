@@ -78,6 +78,7 @@ public class NotasFiscais extends Application {
         gridPane.setVgap(0);
 
         for (ListaVendas venda : vendas) {
+            /*
             ImageView imageView = new ImageView(NotaFiscal);
             imageView.setFitHeight(80);
             imageView.setFitWidth(200);
@@ -85,6 +86,7 @@ public class NotasFiscais extends Application {
             imageView.setSmooth(true);
             imageView.setId("NotaFiscal");
 
+            */
             Label vendaLabel = new Label(venda.getCliente());
             vendaLabel.setId("vendaLabel");
             vendaLabel.setPrefHeight(20);
@@ -104,7 +106,9 @@ public class NotasFiscais extends Application {
             data.setPrefWidth(80);
 
             gridPane.add(data, col, row );
+            /*
             gridPane.add(imageView, col, row + 1);
+             */
             gridPane.add(vendaLabel, col, row + 2);
 
             col++;
