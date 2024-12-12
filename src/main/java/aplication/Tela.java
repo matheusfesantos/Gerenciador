@@ -1,11 +1,10 @@
 package aplication;
 
-import aplication.nota_fiscal.NotasFiscais;
+import aplication.nota_fiscal.TelaVendas;
 import aplication.products.TelaProdutos;
 import javafx.application.Application;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.BorderPane;
@@ -45,7 +44,7 @@ public class Tela extends Application {
 
         Button vendas = new Button("VENDAS");
         vendas.setId("button-vendas");
-        NotasFiscais nt = new NotasFiscais();
+        TelaVendas nt = new TelaVendas();
         vendas.setOnAction(event ->{
                 nt.start(primaryStage);
         });

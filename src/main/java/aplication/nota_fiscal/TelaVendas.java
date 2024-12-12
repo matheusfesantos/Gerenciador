@@ -8,12 +8,8 @@ import javafx.application.Application;
 import javafx.geometry.Pos;
 import javafx.scene.Cursor;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.ScrollPane;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
@@ -22,7 +18,7 @@ import javafx.stage.Stage;
 
 import java.util.List;
 
-public class NotasFiscais extends Application {
+public class TelaVendas extends Application {
 
     @Override
     public void start(Stage primaryStage) {
@@ -94,9 +90,13 @@ public class NotasFiscais extends Application {
             vendaLabel.setAlignment(Pos.CENTER);
             vendaLabel.setCursor(Cursor.HAND);
             vendaLabel.setOnMouseClicked(e -> {
-                System.out.println("Produto comprado foi " + venda.getProduto());
-                System.out.println("Quantidade comprada foi " + venda.getQuantidade());
-                System.out.println("Preço foi de "+ venda.getValorTotal());
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setHeaderText("Cliente: " + venda.getCliente());
+                alert.setContentText("Data da Compra: " + venda.getData()+ "\n" +
+                        "Produto Comprado: " + venda.getProduto()+ "\n" +
+                        "Quantidade Comprada: "+ venda.getQuantidade()+ "\n" +
+                        "Valor total: " + venda.getValorTotal());
+                alert.showAndWait();
             });
 
             Label data = new Label(venda.getData());

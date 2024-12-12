@@ -1,6 +1,7 @@
 package aplication.products;
 
 import aplication.Tela;
+import aplication.nota_fiscal.TelaVendas;
 import entites.produtos.dados.DadosTotais;
 import entites.produtos.dados.ListaProdutos;
 import javafx.application.Application;
@@ -9,6 +10,7 @@ import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -47,12 +49,19 @@ public class TelaProdutos extends Application {
 
         List<ListaProdutos> produtos = DadosTotais.carregarProdutos();
 
+        ScrollPane scroll = new ScrollPane();
+        scroll.setId("scroll");
+        scroll.setFitToWidth(true);
+        scroll.setFitToHeight(true);
+        scroll.setMaxWidth(600);
+        scroll.setMaxHeight(300);
+        vbox.getChildren().add(scroll);
+
         GridPane gridPane = new GridPane();
         gridPane.setPadding(new Insets(25));
         gridPane.setHgap(10);
         gridPane.setVgap(0);
         gridPane.setAlignment(Pos.CENTER);
-
 
         int col = 0;
         int row = 0;
@@ -65,16 +74,13 @@ public class TelaProdutos extends Application {
             imageView.setFitWidth(120);
             imageView.setFitHeight(80);
             imageView.setPreserveRatio(true);
-            gridPane.add(imageView, col, row);
 
-            /*
             Label produtoLabel = new Label(produto.getNome());
             produtoLabel.setId("produtoLabel");
-            gridPane.add(produtoLabel, col, row + 1);
-            */
+            gridPane.add(produtoLabel, col, row );
 
             Label quantidadeLabel = new Label("Em estoque: " + produto.getQuantidade());
-            quantidadeLabel.setId("produtoLabel");
+            quantidadeLabel.setId("quantidadeLabel");
             gridPane.add(quantidadeLabel, col, row + 1);
 
             col++;
@@ -98,13 +104,17 @@ public class TelaProdutos extends Application {
 
         Button vendas = new Button("VENDAS");
         vendas.setId("button");
+        vendas.setOnAction(e -> {
+            TelaVendas nt = new TelaVendas();
+            nt.start(primaryStage);
+        });
         hbox.getChildren().add(vendas);
 
         Button produtosButton = new Button("PRODUTOS");
         produtosButton.setId("button-produtos");
         hbox.getChildren().add(produtosButton);
 
-        vbox.getChildren().add(gridPane);
+        scroll.setContent(gridPane);
         vbox.getChildren().add(hbox);
         root.setCenter(vbox);
 
