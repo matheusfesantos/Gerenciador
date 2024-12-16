@@ -112,7 +112,7 @@ public class TelaVendas extends Application {
             gridPane.add(vendaLabel, col, row + 2);
 
             col++;
-            if (col > 3) {
+            if (col > 4) {
                 col = 0;
                 row += 2;
             }

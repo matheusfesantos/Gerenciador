@@ -1,6 +1,7 @@
 package aplication.products;
 
 import aplication.Tela;
+import aplication.add_produtos.AdicionarProdutos;
 import aplication.nota_fiscal.TelaVendas;
 import entites.produtos.dados.DadosTotais;
 import entites.produtos.dados.ListaProdutos;
@@ -66,44 +67,83 @@ public class TelaProdutos extends Application {
         for (ListaProdutos produto : produtos){
             String NomeProduto = produto.getNome();
 
-            Image produtoImage = new Image("File:"+ produto.getImagem());
-            ImageView imageView = new ImageView(produtoImage);
-            imageView.setCursor(Cursor.HAND);
-            imageView.setFitHeight(80);
-            imageView.setFitWidth(200);
-            imageView.setPreserveRatio(true);
-            imageView.setSmooth(true);
-            gridPane.add(imageView, col, row);
+            if (produto.getQuantidade() > 0){
 
-            Label produtoLabel = new Label(produto.getNome());
-            produtoLabel.setCursor(Cursor.HAND);
-            produtoLabel.setPrefHeight(20);
-            produtoLabel.setPrefWidth(80);
-            produtoLabel.setAlignment(Pos.CENTER);
-            produtoLabel.setId("produtoLabel");
-            gridPane.add(produtoLabel, col, row + 1 );
+                Image produtoImage = new Image("File:"+ produto.getImagem());
+                ImageView imageView = new ImageView(produtoImage);
+                imageView.setCursor(Cursor.HAND);
+                imageView.setFitHeight(80);
+                imageView.setFitWidth(200);
+                imageView.setPreserveRatio(true);
+                imageView.setSmooth(true);
 
-            Label quantidadeLabel = new Label("Em estoque: " + produto.getQuantidade());
-            quantidadeLabel.setPrefHeight(20);
-            quantidadeLabel.setPrefWidth(80);
-            quantidadeLabel.setAlignment(Pos.CENTER);
-            quantidadeLabel.setId("quantidadeLabel");
-            quantidadeLabel.setCursor(Cursor.HAND);
-            gridPane.add(quantidadeLabel, col, row + 2);
+                imageView.setOnMouseClicked(e -> {
+                    Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                    alert.setHeaderText("INFO");
+                    alert.setContentText("Produto: " + NomeProduto + "\n" +
+                            "Quantidade em estoque: " + produto.getQuantidade());
+                    alert.showAndWait();
+                });
+                gridPane.add(imageView, col, row);
+
+                Label produtoLabel = new Label(produto.getNome());
+                produtoLabel.setCursor(Cursor.HAND);
+                produtoLabel.setPrefHeight(20);
+                produtoLabel.setPrefWidth(80);
+                produtoLabel.setAlignment(Pos.CENTER);
+                produtoLabel.setId("produtoLabel");
+                gridPane.add(produtoLabel, col, row + 1 );
+
+                Label quantidadeLabel = new Label("Em estoque");
+                quantidadeLabel.setPrefHeight(20);
+                quantidadeLabel.setPrefWidth(80);
+                quantidadeLabel.setAlignment(Pos.CENTER);
+                quantidadeLabel.setId("quantidadeLabel");
+                quantidadeLabel.setCursor(Cursor.HAND);
+                gridPane.add(quantidadeLabel, col, row + 2);
+            }
+
+            else{//SE NÃO TIVER EM ESTOQUE
+
+                Image produtoImage = new Image("File:"+ produto.getImagem());
+                ImageView imageView = new ImageView(produtoImage);
+                imageView.setOpacity(0.5);
+                imageView.setCursor(Cursor.HAND);
+                imageView.setFitHeight(80);
+                imageView.setFitWidth(200);
+                imageView.setPreserveRatio(true);
+                imageView.setSmooth(true);
+
+                imageView.setOnMouseClicked(e -> {
+                    Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                    alert.setContentText("Esse produto está com estoque esgotado");
+                    alert.showAndWait();
+                });
+                gridPane.add(imageView, col, row);
+
+                Label produtoLabel = new Label(produto.getNome());
+                produtoLabel.setCursor(Cursor.HAND);
+                produtoLabel.setPrefHeight(20);
+                produtoLabel.setPrefWidth(80);
+                produtoLabel.setAlignment(Pos.CENTER);
+                produtoLabel.setId("produtoLabel");
+                gridPane.add(produtoLabel, col, row + 1 );
+
+                Label quantidadeLabel = new Label("Esgotado");
+                quantidadeLabel.setPrefHeight(20);
+                quantidadeLabel.setPrefWidth(80);
+                quantidadeLabel.setAlignment(Pos.CENTER);
+                quantidadeLabel.setStyle("-fx-background-color: red; -fx-text-fill: white;" +
+                        "-fx-font-weight: bold;");
+                quantidadeLabel.setCursor(Cursor.HAND);
+                gridPane.add(quantidadeLabel, col, row + 2);
+            }
 
             Label espaco = new Label(""); // ESPAÇO ENTRE AS INFORMAÇÕES
             gridPane.add(espaco, col, row + 3);
 
-            imageView.setOnMouseClicked(e -> {
-                Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                alert.setHeaderText("INFO");
-                alert.setContentText("Produto: " + NomeProduto + "\n" +
-                        "Quantidade em estoque: " + produto.getQuantidade());
-                alert.showAndWait();
-            });
-
             col++;
-            if (col > 3){
+            if (col > 4){
                 col = 0;
                 row += 4;
             }
@@ -111,7 +151,7 @@ public class TelaProdutos extends Application {
         scroll.setContent(gridPane);
 
         HBox hbox = new HBox();
-        hbox.setAlignment(Pos.TOP_CENTER);
+        hbox.setAlignment(Pos.CENTER);
         hbox.setSpacing(10);
 
         Button voltar = new Button("VOLTAR");
@@ -133,6 +173,16 @@ public class TelaProdutos extends Application {
         Button produtosButton = new Button("PRODUTOS");
         produtosButton.setId("button-produtos");
         hbox.getChildren().add(produtosButton);
+
+        HBox add = new HBox();
+        add.setAlignment(Pos.BOTTOM_LEFT);
+        Button addprodutos = new Button("ADICIONAR PRODUTO");
+        addprodutos.setId("button");
+        addprodutos.setOnAction(e -> {
+            AdicionarProdutos ap = new AdicionarProdutos();
+            ap.start(primaryStage);
+        });
+        hbox.getChildren().add(addprodutos);
 
         vbox.getChildren().add(hbox);
         root.setCenter(vbox);
