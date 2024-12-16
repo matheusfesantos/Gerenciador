@@ -188,7 +188,8 @@ public class TelaProdutos extends Application {
         root.setCenter(vbox);
 
         Scene scene = new Scene(root, 900, 500);
-        scene.getStylesheets().add(getClass().getResource("/Style/TelaProdutos.css").toExternalForm());
+        scene.getStylesheets().add(getClass().getResource
+                ("/Style/TelaProdutos.css").toExternalForm());
         primaryStage.setScene(scene);
         primaryStage.setTitle("MY STORE");
         primaryStage.show();
