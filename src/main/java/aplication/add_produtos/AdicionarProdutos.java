@@ -11,9 +11,12 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
+import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
 import javax.swing.*;
+
+import java.io.File;
 
 public class AdicionarProdutos extends Application {
 
@@ -71,16 +74,36 @@ public class AdicionarProdutos extends Application {
         preco.setMaxHeight(20);
         preco.setPromptText("Digite o valor");
 
+        final String[] imagem = {null};
         Button AdicionarImagem = new Button("Imagem");
         AdicionarImagem.setId("button-imagem");
         AdicionarImagem.setMaxWidth(300);
         AdicionarImagem.setMaxHeight(20);
+        AdicionarImagem.setOnAction(event -> {
+            FileChooser fileChooser = new FileChooser();
+            fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter
+                    ("Imagem", "*.png", "*.jpg", "*.jpeg", "*.gif"));
+            File selectedFile = fileChooser.showOpenDialog(primaryStage);
+            if (selectedFile != null) {
+                imagem[0] = selectedFile.getAbsolutePath();
+                System.out.println("Caminho da imagem: " + imagem[0]);
+            }
+        });
 
         Button Adicionar = new Button("ADICIONAR PRODUTO");
         Adicionar.setId("button");
         Adicionar.setOnAction( event -> {
-            Adicionar adicionar = new Adicionar(produto, preco, quantidade);
-            System.out.print(adicionar);
+            if (produto != null && quantidade != null
+                    && preco != null && imagem[0] != null){
+                Adicionar adicionar = new Adicionar
+                        (produto, preco, quantidade, imagem[0]);
+                System.out.print(adicionar);
+            }
+            else{
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setHeaderText("Erro ao Adicionar o Produto");
+                alert.setContentText("Informações invalidas");
+            }
         });
 
         //VBOX ITENS

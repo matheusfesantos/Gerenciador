@@ -1,7 +1,11 @@
 | PRODUTO | VALOR | QUANTIDADE EM ESTOQUE | IMAGEM
 
-Aspirador; 99.99; 10; C:\Users\matheus.fgs\Desktop\Gerenciador_Java\src\main\resources\photos\produtos\aspirador_de_piscina.png
-Bomba; 230.99; 0; C:\Users\matheus.fgs\Desktop\Gerenciador_Java\src\main\resources\photos\produtos\bomba_piscina.png
-Peneira ; 25.99; 23; C:\Users\matheus.fgs\Desktop\Gerenciador_Java\src\main\resources\photos\produtos\peneira.png
-Cloro; 134.99 ; 10; C:\Users\matheus.fgs\Desktop\Gerenciador_Java\src\main\resources\photos\produtos\cloro.png
-Clarificante ; 230.99; 20; C:\Users\matheus.fgs\Desktop\Gerenciador_Java\src\main\resources\photos\produtos\clarificante.png
+Aspirador; 99.99; 12; C:\Users\matheus.fgs\Desktop\Gerenciador_Java\src\main\resources\photos\produtos\aspirador_de_piscina.png
+
+Bomba; 330.99; 2; C:\Users\matheus.fgs\Desktop\Gerenciador_Java\src\main\resources\photos\produtos\bomba_piscina.png
+
+Peneira ; 25.99; 20; C:\Users\matheus.fgs\Desktop\Gerenciador_Java\src\main\resources\photos\produtos\peneira.png
+
+Cloro; 134.99 ; 22; C:\Users\matheus.fgs\Desktop\Gerenciador_Java\src\main\resources\photos\produtos\cloro.png
+
+Clarificante ; 23.04; 0; C:\Users\matheus.fgs\Desktop\Gerenciador_Java\src\main\resources\photos\produtos\clarificante.png

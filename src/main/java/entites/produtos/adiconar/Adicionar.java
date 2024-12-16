@@ -11,8 +11,10 @@ public class Adicionar {
     static String produto;
     static double preco;
     static int quantidade;
-    public Adicionar(TextField produto, TextField preco, TextField quantidade){
-        this.produto = String.valueOf(produto);
+    static String imagem;
+
+    public Adicionar(TextField produto, TextField preco, TextField quantidade, String imagem){
+        this.produto = produto.getText();
         this.preco = Double.parseDouble(preco.getText());
         this.quantidade = Integer.parseInt(quantidade.getText());
     }
@@ -24,46 +26,48 @@ public class Adicionar {
         String banco = "C:\\Users\\matheus.fgs\\Desktop\\" +
                 "Gerenciador_Java\\Banco_De_Dados\\produtos.txt";
 
-        try(BufferedWriter br = new BufferedWriter(new FileWriter(banco, true))) {
+            if(produto != null && preco > 0 && quantidade > 0 && imagem != null){
 
-            if(produto != null && preco > 0 && quantidade > 0){
+                try(BufferedWriter br = new BufferedWriter(new FileWriter(banco, true))){
                 for (String escrever : produto.split("\n")){
                     br.newLine();
                     br.newLine();
                     br.write(escrever+";");
                     br.write(preco+";");
                     br.write(quantidade+";");
+                    br.write(imagem);
+                }
+                }catch (IOException e){
+                    System.out.println("Erro: " + e.getMessage());
                 }
             }else{
                 System.out.print("Valores nulos !!");
             }
-
-        }catch (IOException e){
-            System.out.println("Erro: " + e.getMessage());
-        }
     }
     @Override
-    public String toString() {
+    public String toString(){
+
         String banco = "C:\\Users\\matheus.fgs\\Desktop\\" +
                 "Gerenciador_Java\\Banco_De_Dados\\produtos.txt";
 
-        try(BufferedWriter br = new BufferedWriter(new FileWriter(banco, true))) {
+        if(produto != null && preco > 0 && quantidade > 0 && imagem != null){
 
-            if(produto != null && preco > 0 && quantidade > 0){
+            try(BufferedWriter br = new BufferedWriter(new FileWriter(banco, true))){
                 for (String escrever : produto.split("\n")){
                     br.newLine();
                     br.newLine();
                     br.write(escrever+";");
                     br.write(preco+";");
                     br.write(quantidade+";");
+                    br.write(imagem);
                 }
-            }else{
-                System.out.print("Valores nulos !!");
+            }catch (IOException e){
+                System.out.println("Erro: " + e.getMessage());
             }
-
-        }catch (IOException e){
-            System.out.println("Erro: " + e.getMessage());
+        }else{
+            System.out.print("Valores nulos !!");
         }
+
         return "Produtos adicionados com sucesso.";
     }
 }
