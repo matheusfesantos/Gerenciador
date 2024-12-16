@@ -58,7 +58,7 @@ public class TelaProdutos extends Application {
         vbox.getChildren().add(scroll);
 
         GridPane gridPane = new GridPane();
-        gridPane.setPadding(new Insets(25));
+        gridPane.setPadding(new Insets(10));
         gridPane.setHgap(10);
         gridPane.setVgap(0);
         gridPane.setAlignment(Pos.CENTER);
@@ -68,27 +68,27 @@ public class TelaProdutos extends Application {
         for (ListaProdutos produto : produtos){
             String NomeProduto = produto.getNome();
 
-            Image image = new Image("file:"+produto.getImagem());
-            ImageView imageView = new ImageView(image);
-            imageView.setId("image");
-            imageView.setFitWidth(120);
-            imageView.setFitHeight(80);
-            imageView.setPreserveRatio(true);
-
             Label produtoLabel = new Label(produto.getNome());
+            produtoLabel.setAlignment(Pos.CENTER);
             produtoLabel.setId("produtoLabel");
             gridPane.add(produtoLabel, col, row );
 
             Label quantidadeLabel = new Label("Em estoque: " + produto.getQuantidade());
+            quantidadeLabel.setAlignment(Pos.CENTER);
+            quantidadeLabel.setLineSpacing(10);
             quantidadeLabel.setId("quantidadeLabel");
             gridPane.add(quantidadeLabel, col, row + 1);
 
+            Label espaco = new Label(""); // ESPAÇO ENTRE AS INFORMAÇÕES
+            gridPane.add(espaco, col, row + 2);
+
             col++;
-            if (col > 2) {
+            if (col > 3){
                 col = 0;
-                row++;
+                row += 4;
             }
         }
+        scroll.setContent(gridPane);
 
         HBox hbox = new HBox();
         hbox.setAlignment(Pos.TOP_CENTER);
@@ -96,7 +96,7 @@ public class TelaProdutos extends Application {
 
         Button voltar = new Button("VOLTAR");
         voltar.setId("button");
-        voltar.setOnAction(e -> {
+        voltar.setOnAction(e ->{
             Tela tela = new Tela();
             tela.start(primaryStage);
         });
@@ -114,7 +114,6 @@ public class TelaProdutos extends Application {
         produtosButton.setId("button-produtos");
         hbox.getChildren().add(produtosButton);
 
-        scroll.setContent(gridPane);
         vbox.getChildren().add(hbox);
         root.setCenter(vbox);
 

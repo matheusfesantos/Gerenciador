@@ -2,8 +2,6 @@
 
 12/12/2023;Motor;1;350.99;Matheus
 
-12/09/2024;Algicida;2;51.98;Matheus
-
 14/01/2024;Clarificante;1;5.88;Eliana
 
 13/01/2022;Motor;3;234.99;Rosival
