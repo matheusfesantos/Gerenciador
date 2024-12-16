@@ -10,6 +10,7 @@ import javafx.scene.Cursor;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
@@ -52,8 +53,6 @@ public class TelaVendas extends Application {
         search.setId("search");
         vbox.getChildren().add(search);
 
-        Image NotaFiscal = new Image("photos/icons/nota_fiscal.png");
-
         GridPane grid = new GridPane();
         grid.setAlignment(Pos.CENTER);
 
@@ -73,8 +72,9 @@ public class TelaVendas extends Application {
         gridPane.setHgap(10);
         gridPane.setVgap(0);
 
-        for (ListaVendas venda : vendas) {
-            /*
+        for (ListaVendas venda : vendas){
+
+            Image NotaFiscal = new Image("photos/icons/nota_fiscal.png");
             ImageView imageView = new ImageView(NotaFiscal);
             imageView.setFitHeight(80);
             imageView.setFitWidth(200);
@@ -82,7 +82,6 @@ public class TelaVendas extends Application {
             imageView.setSmooth(true);
             imageView.setId("NotaFiscal");
 
-            */
             Label vendaLabel = new Label(venda.getCliente());
             vendaLabel.setId("vendaLabel");
             vendaLabel.setPrefHeight(20);
@@ -105,10 +104,11 @@ public class TelaVendas extends Application {
             data.setPrefHeight(20);
             data.setPrefWidth(80);
 
-            gridPane.add(data, col, row );
-            /*
-            gridPane.add(imageView, col, row + 1);
-             */
+            Label espaco = new Label("");
+            gridPane.add(espaco, col, row + 3);
+
+            gridPane.add(imageView, col, row);
+            gridPane.add(data, col, row + 1 );
             gridPane.add(vendaLabel, col, row + 2);
 
             col++;

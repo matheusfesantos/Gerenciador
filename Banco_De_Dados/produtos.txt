@@ -1,7 +1,7 @@
 | PRODUTO | VALOR | QUANTIDADE EM ESTOQUE | IMAGEM
 
-Aspirador; 99.99; 10; C:\Users\matheus.fgs\Desktop\Gerenciador_Java\src\main\resources\photos\produtos\peneira.png
-Motor; 230.99; 4; C:\Users\matheus.fgs\Desktop\Gerenciador_Java\src\main\resources\photos\produtos\peneira.png
+Aspirador; 99.99; 10; C:\Users\matheus.fgs\Desktop\Gerenciador_Java\src\main\resources\photos\produtos\aspirador_de_piscina.png
+Bomba; 230.99; 4; C:\Users\matheus.fgs\Desktop\Gerenciador_Java\src\main\resources\photos\produtos\bomba_piscina.png
 Peneira ; 25.99; 23; C:\Users\matheus.fgs\Desktop\Gerenciador_Java\src\main\resources\photos\produtos\peneira.png
 Cloro; 134.99 ; 10; C:\Users\matheus.fgs\Desktop\Gerenciador_Java\src\main\resources\photos\produtos\cloro.png
 Clarificante ; 230.99; 20; C:\Users\matheus.fgs\Desktop\Gerenciador_Java\src\main\resources\photos\produtos\clarificante.png

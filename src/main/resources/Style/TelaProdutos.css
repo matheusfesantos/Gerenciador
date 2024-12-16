@@ -17,9 +17,13 @@
 }
 
 #scroll{
-    -fx-background-color: black;
     -fx-border-color: black;
     -fx-border-width: 1px;
+}
+
+#BoxProdutos{
+    -fx-border-color: black;
+    -fx-border-width: 2px;
 }
 
 #produtoLabel{

@@ -7,11 +7,9 @@ import entites.produtos.dados.ListaProdutos;
 import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
+import javafx.scene.Cursor;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.ScrollPane;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
@@ -68,19 +66,41 @@ public class TelaProdutos extends Application {
         for (ListaProdutos produto : produtos){
             String NomeProduto = produto.getNome();
 
+            Image produtoImage = new Image("File:"+ produto.getImagem());
+            ImageView imageView = new ImageView(produtoImage);
+            imageView.setCursor(Cursor.HAND);
+            imageView.setFitHeight(80);
+            imageView.setFitWidth(200);
+            imageView.setPreserveRatio(true);
+            imageView.setSmooth(true);
+            gridPane.add(imageView, col, row);
+
             Label produtoLabel = new Label(produto.getNome());
+            produtoLabel.setCursor(Cursor.HAND);
+            produtoLabel.setPrefHeight(20);
+            produtoLabel.setPrefWidth(80);
             produtoLabel.setAlignment(Pos.CENTER);
             produtoLabel.setId("produtoLabel");
-            gridPane.add(produtoLabel, col, row );
+            gridPane.add(produtoLabel, col, row + 1 );
 
             Label quantidadeLabel = new Label("Em estoque: " + produto.getQuantidade());
+            quantidadeLabel.setPrefHeight(20);
+            quantidadeLabel.setPrefWidth(80);
             quantidadeLabel.setAlignment(Pos.CENTER);
-            quantidadeLabel.setLineSpacing(10);
             quantidadeLabel.setId("quantidadeLabel");
-            gridPane.add(quantidadeLabel, col, row + 1);
+            quantidadeLabel.setCursor(Cursor.HAND);
+            gridPane.add(quantidadeLabel, col, row + 2);
 
             Label espaco = new Label(""); // ESPAÇO ENTRE AS INFORMAÇÕES
-            gridPane.add(espaco, col, row + 2);
+            gridPane.add(espaco, col, row + 3);
+
+            imageView.setOnMouseClicked(e -> {
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setHeaderText("INFO");
+                alert.setContentText("Produto: " + NomeProduto + "\n" +
+                        "Quantidade em estoque: " + produto.getQuantidade());
+                alert.showAndWait();
+            });
 
             col++;
             if (col > 3){
