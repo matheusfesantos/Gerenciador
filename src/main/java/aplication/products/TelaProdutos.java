@@ -3,6 +3,7 @@ package aplication.products;
 import aplication.Tela;
 import aplication.add_produtos.AdicionarProdutos;
 import aplication.nota_fiscal.TelaVendas;
+import aplication.tela_de_venda.VendaCliente;
 import entites.produtos.dados.DadosTotais;
 import entites.produtos.dados.ListaProdutos;
 import javafx.application.Application;
@@ -68,7 +69,6 @@ public class TelaProdutos extends Application {
             String NomeProduto = produto.getNome();
 
             if (produto.getQuantidade() > 0){
-
                 Image produtoImage = new Image("File:"+ produto.getImagem());
                 ImageView imageView = new ImageView(produtoImage);
                 imageView.setCursor(Cursor.HAND);
@@ -77,12 +77,15 @@ public class TelaProdutos extends Application {
                 imageView.setPreserveRatio(true);
                 imageView.setSmooth(true);
 
-                imageView.setOnMouseClicked(e -> {
-                    Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                    alert.setHeaderText("INFO");
-                    alert.setContentText("Produto: " + NomeProduto + "\n" +
-                            "Quantidade em estoque: " + produto.getQuantidade());
-                    alert.showAndWait();
+                String nomeProduto = produto.getNome();
+                String imagemProduto = produto.getImagem();
+                double precoProduto = produto.getPreco();
+                int quantidadeProduto = produto.getQuantidade();
+
+                imageView.setOnMouseClicked(e ->{
+                    VendaCliente vc = new VendaCliente
+                            (nomeProduto, imagemProduto, precoProduto, quantidadeProduto);
+                    vc.start(primaryStage);
                 });
                 gridPane.add(imageView, col, row);
 
@@ -116,6 +119,7 @@ public class TelaProdutos extends Application {
 
                 imageView.setOnMouseClicked(e -> {
                     Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                    alert.setHeaderText(null);
                     alert.setContentText("Esse produto está com estoque esgotado");
                     alert.showAndWait();
                 });
