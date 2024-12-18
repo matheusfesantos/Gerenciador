@@ -1,5 +1,6 @@
 package aplication.add_produtos;
 
+import aplication.Tela;
 import aplication.products.TelaProdutos;
 import entites.produtos.adiconar.Adicionar;
 import javafx.application.Application;
@@ -79,30 +80,28 @@ public class AdicionarProdutos extends Application {
         AdicionarImagem.setId("button-imagem");
         AdicionarImagem.setMaxWidth(300);
         AdicionarImagem.setMaxHeight(20);
-        AdicionarImagem.setOnAction(event -> {
+        AdicionarImagem.setOnAction(event ->{
             FileChooser fileChooser = new FileChooser();
             fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter
                     ("Imagem", "*.png", "*.jpg", "*.jpeg", "*.gif"));
             File selectedFile = fileChooser.showOpenDialog(primaryStage);
             if (selectedFile != null) {
-                imagem[0] = selectedFile.getAbsolutePath();
-                System.out.println("Caminho da imagem: " + imagem[0]);
             }
         });
-
         Button Adicionar = new Button("ADICIONAR PRODUTO");
         Adicionar.setId("button");
-        Adicionar.setOnAction( event -> {
-            if (produto != null && quantidade != null
-                    && preco != null && imagem[0] != null){
-                Adicionar adicionar = new Adicionar
-                        (produto, preco, quantidade, imagem[0]);
-                System.out.print(adicionar);
-            }
-            else{
-                Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                alert.setHeaderText("Erro ao Adicionar o Produto");
-                alert.setContentText("Informações invalidas");
+        Adicionar.setOnAction( event ->{
+            Adicionar adicionar = new Adicionar
+                    (produto, preco, quantidade);
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("MY STORE");
+            alert.setHeaderText(null);
+            alert.setContentText(adicionar.toString());
+            alert.showAndWait();
+
+            if(adicionar != null){
+                Tela tela = new Tela();
+                tela.start(primaryStage);
             }
         });
 

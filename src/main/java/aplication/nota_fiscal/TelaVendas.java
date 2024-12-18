@@ -40,7 +40,7 @@ public class TelaVendas extends Application {
         VBox vbox = new VBox();
         vbox.setAlignment(Pos.CENTER);
         vbox.setId("vbox");
-        vbox.setSpacing(40);
+        vbox.setSpacing(20);
         vbox.setPrefWidth(840);
         vbox.setPrefHeight(450);
         vbox.setMaxWidth(840);
@@ -69,7 +69,7 @@ public class TelaVendas extends Application {
         GridPane gridPane = new GridPane();
         gridPane.setAlignment(Pos.CENTER);
         gridPane.setPadding(new javafx.geometry.Insets(10));
-        gridPane.setHgap(10);
+        gridPane.setHgap(13);
         gridPane.setVgap(0);
 
         for (ListaVendas venda : vendas){
@@ -81,14 +81,8 @@ public class TelaVendas extends Application {
             imageView.setPreserveRatio(true);
             imageView.setSmooth(true);
             imageView.setId("NotaFiscal");
-
-            Label vendaLabel = new Label(venda.getCliente());
-            vendaLabel.setId("vendaLabel");
-            vendaLabel.setPrefHeight(20);
-            vendaLabel.setPrefWidth(80);
-            vendaLabel.setAlignment(Pos.CENTER);
-            vendaLabel.setCursor(Cursor.HAND);
-            vendaLabel.setOnMouseClicked(e -> {
+            imageView.setCursor(Cursor.HAND);
+            imageView.setOnMouseClicked(e -> {
                 Alert alert = new Alert(Alert.AlertType.INFORMATION);
                 alert.setHeaderText("Cliente: " + venda.getCliente());
                 alert.setContentText("Data da Compra: " + venda.getData()+ "\n" +
@@ -98,6 +92,12 @@ public class TelaVendas extends Application {
                 alert.showAndWait();
             });
 
+            Label vendaLabel = new Label(venda.getCliente());
+            vendaLabel.setId("vendaLabel");
+            vendaLabel.setPrefHeight(20);
+            vendaLabel.setPrefWidth(80);
+            vendaLabel.setAlignment(Pos.CENTER);
+
             Label data = new Label(venda.getData());
             data.setAlignment(Pos.CENTER);
             data.setId("data");
@@ -105,16 +105,19 @@ public class TelaVendas extends Application {
             data.setPrefWidth(80);
 
             Label espaco = new Label("");
-            gridPane.add(espaco, col, row + 3);
+            espaco.setAlignment(Pos.CENTER);
+            espaco.setPrefHeight(20);
+            espaco.setPrefWidth(80);
 
             gridPane.add(imageView, col, row);
             gridPane.add(data, col, row + 1 );
             gridPane.add(vendaLabel, col, row + 2);
+            gridPane.add(espaco, col, row + 3);
 
             col++;
             if (col > 4) {
                 col = 0;
-                row += 2;
+                row += 4;
             }
         }
         scroll.setContent(gridPane);

@@ -2,6 +2,7 @@ package aplication.tela_de_venda;
 
 import aplication.products.TelaProdutos;
 
+import entites.clientes.adiconar_venda.AdicionarVenda;
 import javafx.application.Application;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
@@ -65,6 +66,7 @@ public class VendaCliente extends Application {
         imageView.setPreserveRatio(true);
         imageView.setSmooth(true);
 
+        double valor = precoProduto;
         Label infoProduto = new Label("  "+precoProduto + " R$ \n\n " +
                 +  quantidadeProduto + " em estoque");
         infoProduto.setId("info-produto");
@@ -106,7 +108,6 @@ public class VendaCliente extends Application {
         quantidadeproduto.setMaxWidth(300);
         quantidadeproduto.setPrefHeight(20);
         quantidadeproduto.setPrefWidth(300);
-
         TextField quantidade = new TextField();
         quantidade.setAlignment(Pos.CENTER);
         quantidade.setPromptText("Digite a quantidade");
@@ -136,7 +137,17 @@ public class VendaCliente extends Application {
 
         Button comprarbnt = new Button("COMPRAR");
         comprarbnt.setId("button");
-        comprarbnt.setOnAction(e ->{});
+        comprarbnt.setOnAction(e ->{
+            AdicionarVenda addV = new AdicionarVenda
+                    (cliente, data_venda, quantidade, valor, nomeProduto );
+            Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+            String nome = cliente.getText();//PASSAR NOME CLIENTE PARA VARIÁVEL
+            String NomelowerCase = nome.toUpperCase();// DEIXAR TUDO MAIÚSCULO
+            alert.setTitle("COMPRA DE "+NomelowerCase+" RELIZADA");
+            alert.setHeaderText(null);
+            alert.setContentText(addV.toString());
+            alert.showAndWait();
+        });
 
         botoes.getChildren().add(voltar);
         botoes.getChildren().add(comprarbnt);
