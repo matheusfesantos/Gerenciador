@@ -1,0 +1,7 @@
+| DATA | PRODUTO | QUANTIDADE | PREÇO | CLIENTE |
+
+12/12/2023;Motor;1;350.99;Matheus
+
+18/12/2024;Cloro;22;2969.78;Rosival;
+
+19/12/2024;Algicida;1;58.0;Sophia;

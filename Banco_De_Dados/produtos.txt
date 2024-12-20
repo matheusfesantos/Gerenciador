@@ -1,0 +1,17 @@
+| PRODUTO | VALOR | QUANTIDADE EM ESTOQUE | IMAGEM
+
+Aspirador; 99.99; 12; C:\Users\matheus.fgs\Desktop\Gerenciador_Java\src\main\resources\photos\produtos\aspirador_de_piscina.png
+
+Bomba; 330.99; 4;C:\Users\matheus.fgs\Desktop\Gerenciador_Java\src\main\resources\photos\produtos\bomba_piscina.png
+
+Peneira ; 25.99; 20; C:\Users\matheus.fgs\Desktop\Gerenciador_Java\src\main\resources\photos\produtos\peneira.png
+
+Cloro; 134.99; 8;C:\Users\matheus.fgs\Desktop\Gerenciador_Java\src\main\resources\photos\produtos\cloro.png
+
+Clarificante ; 23.04; 5; C:\Users\matheus.fgs\Desktop\Gerenciador_Java\src\main\resources\photos\produtos\clarificante.png
+
+Medidor de Ph; 30.00; 10; C:\Users\matheus.fgs\Desktop\Gerenciador_Java\src\main\resources\photos\produtos\medidor_ph_cloro.png
+
+Algicida;58.0;13;C:\Users\matheus.fgs\Desktop\Gerenciador_Java\src\main\resources\photos\produtos\algicida.png
+
+Kit Gerador de Cloro; 3599.99; 11; C:\Users\matheus.fgs\Desktop\Gerenciador_Java\src\main\resources\photos\produtos\Gerador_de_cloro.png
