@@ -138,7 +138,7 @@ public class TelaProdutos extends Application {
                 quantidadeLabel.setPrefWidth(80);
                 quantidadeLabel.setAlignment(Pos.CENTER);
                 quantidadeLabel.setStyle("-fx-background-color: red; -fx-text-fill: white;" +
-                        "-fx-font-weight: bold;");
+                        "-fx-font-weight: bold; -fx-padding: 3px");
                 quantidadeLabel.setCursor(Cursor.HAND);
                 gridPane.add(quantidadeLabel, col, row + 2);
             }

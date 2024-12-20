@@ -1,5 +1,6 @@
 package entites.clientes.adiconar_venda;
 
+import entites.produtos.autializar_produtos.AtualizarProdutos;
 import javafx.scene.control.TextField;
 
 import java.io.BufferedWriter;
@@ -32,7 +33,7 @@ public class AdicionarVenda {
                 "Gerenciador_Java\\Banco_De_Dados\\datas_vendas.txt";
 
         try(BufferedWriter br = new BufferedWriter
-                (new FileWriter(vendas, true))) {
+                (new FileWriter(vendas, true))){
 
             for (String escrever : cliente.split("\n")){
                 br.newLine();
@@ -43,6 +44,10 @@ public class AdicionarVenda {
                 valor = valor * quantidade;
                 br.write(valor+";");
                 br.write(cliente+";");
+
+                AtualizarProdutos aatp = new AtualizarProdutos
+                        (nomeproduto, quantidade);
+                aatp.toString();
             }
         }catch (IOException e){
             System.out.println("Erro: " + e.getMessage());

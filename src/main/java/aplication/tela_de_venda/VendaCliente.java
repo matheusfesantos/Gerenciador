@@ -141,12 +141,18 @@ public class VendaCliente extends Application {
             AdicionarVenda addV = new AdicionarVenda
                     (cliente, data_venda, quantidade, valor, nomeProduto );
             Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+
             String nome = cliente.getText();//PASSAR NOME CLIENTE PARA VARIÁVEL
-            String NomelowerCase = nome.toUpperCase();// DEIXAR TUDO MAIÚSCULO
-            alert.setTitle("COMPRA DE "+NomelowerCase+" RELIZADA");
+            String NomeUpperCase = nome.toUpperCase();// DEIXAR TUDO MAIÚSCULO
+
+            alert.setTitle("COMPRA DE "+NomeUpperCase+" RELIZADA");
             alert.setHeaderText(null);
             alert.setContentText(addV.toString());
             alert.showAndWait();
+            if (addV != null) {
+                TelaProdutos tp = new TelaProdutos();
+                tp.start(primaryStage);
+            }
         });
 
         botoes.getChildren().add(voltar);
