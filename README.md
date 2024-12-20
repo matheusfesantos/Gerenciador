@@ -42,7 +42,7 @@ Essas telas foram implementadas utilizando **JavaFX**, o que permite criar uma i
 O diretório **`resources`** armazena todos os **estilos da aplicação** e as **fotos** usadas para representar os produtos na interface gráfica. Este diretório é dividido em duas partes principais:
 
 1. **Estilos (CSS)**: Os estilos da aplicação são organizados em arquivos CSS dentro deste diretório, onde são definidos todos os estilos visuais para as telas, botões, tabelas e outros componentes da interface gráfica. Esses arquivos são aplicados no front-end JavaFX para garantir uma interface consistente e agradável.
-
+   
 2. **Fotos de Produtos**: As imagens utilizadas para representar os produtos na interface do usuário também estão armazenadas no diretório **`resources`**. Cada produto pode ter uma imagem associada, que será exibida na tela de produtos e em outras áreas do sistema para proporcionar uma experiência visual mais rica ao usuário.
 
 ## Como Funciona 💡
@@ -54,11 +54,23 @@ O diretório **`resources`** armazena todos os **estilos da aplicação** e as *
 
 ## Telas do Sistema 🖥️
 
-- **Tela Principal**: A tela inicial onde o usuário pode navegar para outras funções, como adicionar produtos, visualizar vendas ou consultar o estoque.
-- **Tela de Adicionar Produtos**: Tela responsável por permitir que o usuário adicione novos produtos ao sistema, definindo o nome, quantidade e preço.
-- **Tela de Produtos**: Exibe todos os produtos cadastrados no sistema, com informações detalhadas de cada item disponível.
-- **Tela de Vendas**: Exibe as compras realizadas, com detalhes como o nome do produto, data da compra, quantidade e valor total. Cada venda é registrada e mostrada de forma clara para o usuário.
-- **Venda Cliente**: Tela onde o cliente pode finalizar a compra, visualizando os itens selecionados e o valor total antes de finalizar a transação.
+### Tela Principal
+![Tela Principal](https://drive.google.com/uc?export=view&id=1den2k_hISj8odpxz8XRkRYD_ezafFK_w)
+
+### Tela de Produtos
+![Tela de Produtos](https://drive.google.com/uc?export=view&id=1baS_FjhrfzVs3QjQG-i2_6eKOBYMDCE_)
+
+### Venda Cliente
+![Venda Cliente](https://drive.google.com/uc?export=view&id=1XgHUcr5DC63_kdulWVNa50qC9OQ1YuLw)
+
+### Adicionar Produtos
+![Adicionar Produtos](https://drive.google.com/uc?export=view&id=1kk8nCk3cu2ZD-6rmdua62DphA0kcNSUE)
+
+### Tela de Vendas
+![Tela de Vendas](https://drive.google.com/uc?export=view&id=16OHdHQQA5OQOCPxO2enHYbShFKPlhSCP)
+
+### Primeiro Design Imaginado para o MY STORE
+![Primeiro Design](https://drive.google.com/uc?export=view&id=1fL_0oU0bkh4P1x6aoMwTAFvXXhjCwUWO)
 
 ## Tecnologias Utilizadas 🔨
 
