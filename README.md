@@ -30,31 +30,7 @@ Este repositório contém um projeto de um **gerenciador** desenvolvido em **Jav
 
 O projeto é dividido em pacotes para facilitar a organização e manutenção do código:
 
-- `controller`: Contém os controladores da aplicação.
 - `model`: Contém as classes que representam os dados e lógica de negócios.
 - `view`: Contém os arquivos relacionados à interface do usuário (FXML e CSS).
 - `database`: Contém os arquivos `.txt` utilizados para o armazenamento de dados.
-
-## Contribuição
-
-Sinta-se à vontade para contribuir com melhorias ou novas funcionalidades. Para isso:
-
-1. Faça um fork do repositório.
-2. Crie uma nova branch para sua funcionalidade:
-   ```bash
-   git checkout -b minha-nova-funcionalidade
-   ```
-3. Commit suas alterações:
-   ```bash
-   git commit -m "Adiciona nova funcionalidade"
-   ```
-4. Envie para o seu fork:
-   ```bash
-   git push origin minha-nova-funcionalidade
-   ```
-5. Abra um Pull Request neste repositório.
-
-## Licença
-
-Este projeto está licenciado sob a [MIT License](LICENSE).
 
