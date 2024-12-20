@@ -26,11 +26,3 @@ Este repositório contém um projeto de um **gerenciador** desenvolvido em **Jav
 3. Certifique-se de que o JavaFX esteja configurado corretamente em seu ambiente.
 4. Execute o arquivo principal da aplicação.
 
-## Estrutura do Projeto
-
-O projeto é dividido em pacotes para facilitar a organização e manutenção do código:
-
-- `model`: Contém as classes que representam os dados e lógica de negócios.
-- `view`: Contém os arquivos relacionados à interface do usuário (FXML e CSS).
-- `database`: Contém os arquivos `.txt` utilizados para o armazenamento de dados.
-
