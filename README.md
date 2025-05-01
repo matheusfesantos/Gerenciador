@@ -1,4 +1,5 @@
 # MY STORE - Gerenciador de Compras 🛒
+![Java](https://img.shields.io/badge/Java-007396?style=for-the-badge&logo=java&logoColor=white) ![CSS](https://img.shields.io/badge/CSS-2965F1?style=for-the-badge&logo=css3&logoColor=white) ![JavaFX](https://img.shields.io/badge/JavaFX-007396?style=for-the-badge&logo=java&logoColor=white)
 
 O **MY STORE** é um sistema desenvolvido em **Java** para gerenciar compras de um estabelecimento. Ele utiliza arquivos `.txt` para armazenar dados, processa compras com ajustes automáticos no estoque e exibe informações no terminal da IDE. Além disso, as informações de cada venda são mostradas na **Tela de Vendas**.
 
